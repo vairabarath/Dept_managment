@@ -19,7 +19,7 @@ const Navbar = () => {
           <img src={assets.message} alt="" width={20} height={20} />
         </div>
         <div className=" relative bg-white cursor-pointer rounded-full w-7 h-7 flex items-center justify-center">
-          <img src={assets.assouncement} alt="" width={20} height={20} />
+          <img src={assets.announcement} alt="" width={20} height={20} />
           <div className="absolute -top-3 -right-3 w-5 h-5 flex items-center justify-center text-white text-xs rounded-full bg-blue-600 ">
             2
           </div>

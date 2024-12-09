@@ -6,9 +6,7 @@ export default {
       colors: {
         skyBlue: "#C3EBFA",
         lightSkyBlue: "#EDF9FD",
-        lightYellow: "#FEFCEB",
         lightPink: "#FFDCF1",
-        yellow: "#FAE27C",
         green: "#CBF7B8",
         sandle: "#FEF8DD",
       },

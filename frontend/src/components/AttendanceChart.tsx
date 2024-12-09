@@ -37,8 +37,18 @@ const AttendanceChart = () => {
             verticalAlign="top"
             wrapperStyle={{ paddingTop: "20px", paddingBottom: "40px" }}
           />
-          <Bar dataKey="present" fill="#C3EBFA" legendType="circle" />
-          <Bar dataKey="absent" fill="#CBF7B8" legendType="circle" />
+          <Bar
+            radius={[10, 10, 0, 0]}
+            dataKey="present"
+            fill="#C3EBFA"
+            legendType="circle"
+          />
+          <Bar
+            radius={[10, 10, 0, 0]}
+            dataKey="absent"
+            fill="#CBF7B8"
+            legendType="circle"
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>
