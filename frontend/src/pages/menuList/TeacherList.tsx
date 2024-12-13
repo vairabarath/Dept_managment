@@ -1,9 +1,10 @@
-import { Delete, FilterIcon, Plus, SortDesc, Trash, View } from "lucide-react";
+import { FilterIcon, Plus, SortDesc, Trash, View } from "lucide-react";
 import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
 import { TeacherColumns } from "../../helper/Columns";
 import { Link } from "react-router-dom";
 import { role, teachersData } from "../../helper/data";
+import Form from "../../components/Form";
 
 type Teacher = {
   id: number;
@@ -44,15 +45,16 @@ const TeacherList = () => {
         <td className="hidden md:table-cell">{item.address}</td>
         <td>
           <div className="flex items-center gap-2">
-            <Link to={`/data/teachers/${item.id}`}>
+            <Link to={` /teachers/${item.id}`}>
               <button className="w-7 h-7 flex items-center justify-center rounded-full bg-green">
                 <View width={16} height={16} />
               </button>
             </Link>
             {role === "admin" && (
-              <button className="w-7 h-7 flex items-center justify-center rounded-full bg-skyBlue">
-                <Trash width={16} height={16} />
-              </button>
+              // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-skyBlue">
+              //   <Trash width={16} height={16} />
+              // </button>
+              <Form type="Delete" table="teacher" id={item.id} />
             )}
           </div>
         </td>
@@ -71,9 +73,10 @@ const TeacherList = () => {
           <button className="w-8 h-8 flex items-center justify-center rounded-full bg-green">
             <SortDesc width={14} height={14} />
           </button>
-          <button className="w-8 h-8 flex items-center justify-center rounded-full bg-green">
+          {/* <button className="w-8 h-8 flex items-center justify-center rounded-full bg-green">
             <Plus width={14} height={14} />
-          </button>
+          </button> */}
+          {role === "admin" && <Form type="create" table="teacher" />}
         </div>
       </div>
 

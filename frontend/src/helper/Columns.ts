@@ -9,11 +9,6 @@ export const TeacherColumns = [
     className: "hidden md:table-cell",
   },
   {
-    header: "Teacher ID",
-    accessor: "teacherid",
-    className: "hidden md:table-cell",
-  },
-  {
     header: "Subjects",
     accessor: "subjects",
     className: "hidden md:table-cell",

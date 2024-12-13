@@ -8,7 +8,6 @@ import Student from "./pages/Student";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import TeacherList from "./pages/menuList/TeacherList";
-import SingleTeacher from "./pages/single/SingleTeacher";
 
 const App = () => {
   const path = useLocation();
@@ -27,16 +26,13 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/parents" element={<Parent />} />
-            <Route path="/teachers" element={<Teacher />} />
-            <Route path="/students" element={<Student />} />
+            <Route path="/teachers/:id" element={<Teacher />} />
+            <Route path="/students/:id" element={<Student />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/login" element={<Login />} />
 
             {/* List Routes */}
             <Route path="data/teachers" element={<TeacherList />} />
-
-            {/* Single Routes */}
-            <Route path="data/teachers/:id" element={<SingleTeacher />} />
           </Routes>
         </div>
       </div>
