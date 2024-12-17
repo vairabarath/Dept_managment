@@ -8,6 +8,17 @@ import Student from "./pages/Student";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import TeacherList from "./pages/menuList/TeacherList";
+import StudentList from "./pages/menuList/StudentList";
+import ParentList from "./pages/menuList/ParentList";
+import SubjectList from "./pages/menuList/SubjectList";
+import ClassList from "./pages/menuList/ClassList";
+import LessonsList from "./pages/menuList/LessonsList";
+import ExamList from "./pages/menuList/ExamsList";
+import AssignmentList from "./pages/menuList/AssignmentList";
+import ResultList from "./pages/menuList/ResultList";
+import AttendanceList from "./pages/menuList/EventList";
+import EventList from "./pages/menuList/EventList";
+import AnnouncementList from "./pages/menuList/AnnouncementList";
 
 const App = () => {
   const path = useLocation();
@@ -33,6 +44,16 @@ const App = () => {
 
             {/* List Routes */}
             <Route path="data/teachers" element={<TeacherList />} />
+            <Route path="data/students" element={<StudentList />} />
+            <Route path="data/parents" element={<ParentList />} />
+            <Route path="data/subjects" element={<SubjectList />} />
+            <Route path="data/classes" element={<ClassList />} />
+            <Route path="data/lessons" element={<LessonsList />} />
+            <Route path="data/exams" element={<ExamList />} />
+            <Route path="data/assignments" element={<AssignmentList />} />
+            <Route path="data/results" element={<ResultList />} />
+            <Route path="data/events" element={<EventList />} />
+            <Route path="data/announcements" element={<AnnouncementList />} />
           </Routes>
         </div>
       </div>

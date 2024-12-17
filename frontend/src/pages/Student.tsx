@@ -60,19 +60,34 @@ const Student = () => {
         <div className="bg-white p-4 rounded-md ">
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="flex gap-4 mt-4 flex-wrap text-xs text-gray-500">
-            <Link className="p-3 rounded-md bg-skyBlue" to="#">
-              Student's Classes
-            </Link>
-            <Link className="p-3 rounded-md bg-lightSkyBlue" to="#">
+            <Link
+              className="p-3 rounded-md bg-lightSkyBlue"
+              to={`/data/teachers?classId=${2}`}
+            >
               Student's Teachers
             </Link>
-            <Link className="p-3 rounded-md bg-lightPink" to="#">
+            <Link
+              className="p-3 rounded-md bg-lightPink"
+              to={`/data/lessons?classId=${2}`}
+            >
               Student's Lessons
             </Link>
-            <Link className="p-3 rounded-md bg-green" to="#">
+            <Link
+              className="p-3 rounded-md bg-green"
+              to={`/data/exams?classId=${2}`}
+            >
               Student's Exams
             </Link>
-            <Link className="p-3 rounded-md bg-sandle" to="#">
+            <Link
+              className="p-3 rounded-md bg-skyBlue"
+              to={`/data/results?studentId=${"student2"}`}
+            >
+              Student's Result
+            </Link>
+            <Link
+              className="p-3 rounded-md bg-sandle"
+              to={`/data/assignments?classId=${2}`}
+            >
               Student's Assignment
             </Link>
           </div>

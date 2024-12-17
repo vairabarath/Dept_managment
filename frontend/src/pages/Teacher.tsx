@@ -3,6 +3,8 @@ import BigCalendar from "../components/BigCalendar";
 import Announcement from "../components/Announcement";
 import { Link } from "react-router-dom";
 import Piechart from "../components/Piechart";
+import TeacherForm from "../components/forms/TeacherForm";
+import Form from "../components/Form";
 
 const Teacher = () => {
   return (
@@ -20,7 +22,29 @@ const Teacher = () => {
               />
             </div>
             <div className="w-2/3 flex flex-col justify-start gap-4">
-              <h1 className="text-xl font-semibold">Gilli</h1>
+              <div className="flex items-center gap-2">
+                <h1 className="text-xl font-semibold">Gilli</h1>
+                <Form
+                  table="teacher"
+                  type="update"
+                  data={{
+                    id: 1,
+                    teacherId: "1234567890",
+                    username: "John Doe",
+                    email: "john@doe.com",
+                    password: "1234567890",
+                    firstName: "John",
+                    lastName: "Doe",
+                    photo:
+                      "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    phone: "1234567890",
+                    subjects: ["Math", "Geometry"],
+                    classes: ["1B", "2A", "3C"],
+                    address: "123 Main St, Anytown, USA",
+                  }}
+                />
+              </div>
+
               <p className="text-sm tetx-gray-500">
                 Loram ipsum dolor sit amet consectetur adipisicing elit.
               </p>
@@ -60,19 +84,34 @@ const Teacher = () => {
         <div className="bg-white p-4 rounded-md ">
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="flex gap-4 mt-4 flex-wrap text-xs text-gray-500">
-            <Link className="p-3 rounded-md bg-skyBlue" to="#">
+            <Link
+              className="p-3 rounded-md bg-skyBlue"
+              to={`/data/classes?inchargeId=${"teacher9"}`}
+            >
               Teacher's Classes
             </Link>
-            <Link className="p-3 rounded-md bg-lightSkyBlue" to="#">
+            <Link
+              className="p-3 rounded-md bg-lightSkyBlue"
+              to={`/data/students?teacherId=${"teacher12"}`}
+            >
               Teacher's Students
             </Link>
-            <Link className="p-3 rounded-md bg-lightPink" to="#">
+            <Link
+              className="p-3 rounded-md bg-green"
+              to={`/data/lessons?teacherId=${"teacher5"}`}
+            >
+              Teacher's Lessons
+            </Link>
+            <Link
+              className="p-3 rounded-md bg-lightPink"
+              to={`/data/exams?teacherId=${"teacher5"}`}
+            >
               Teacher's Exams
             </Link>
-            <Link className="p-3 rounded-md bg-green" to="#">
-              Teacher's Results
-            </Link>
-            <Link className="p-3 rounded-md bg-sandle" to="#">
+            <Link
+              className="p-3 rounded-md bg-sandle"
+              to={`/data/assignments?teacherId=${"teacher5"}`}
+            >
               Teacher's Assignment
             </Link>
           </div>

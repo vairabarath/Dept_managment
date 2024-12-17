@@ -1,6 +1,13 @@
-import { Divide, Edit, Plus, Trash, X } from "lucide-react";
+import { Edit, Plus, Trash, X } from "lucide-react";
 import { useState } from "react";
+
 import TeacherForm from "./forms/TeacherForm";
+
+const forms: {
+  [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
+} = {
+  teacher: (type, data) => <TeacherForm type={type} data={data} />,
+};
 
 const Form = ({
   table,
@@ -8,10 +15,21 @@ const Form = ({
   data,
   id,
 }: {
-  table: "teacher";
+  table:
+    | "teacher"
+    | "student"
+    | "parent"
+    | "subject"
+    | "class"
+    | "lesson"
+    | "exam"
+    | "assignment"
+    | "result"
+    | "events"
+    | "announcements";
   type: "create" | "update" | "Delete";
   data?: any;
-  id?: number;
+  id?: number | string;
 }) => {
   const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
   const bgColor =
@@ -33,9 +51,9 @@ const Form = ({
           Delete
         </button>
       </form>
-    ) : (
-      <TeacherForm type="create" />
-    );
+    ) : type === "create" || type === "update" ? (
+      forms[table](type, data)
+    ) : null;
   };
 
   return (

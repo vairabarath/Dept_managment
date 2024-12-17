@@ -24,6 +24,7 @@ import logout from "./logout.png";
 import create from "./create.png";
 import update from "./update.png";
 import Delete from "./delete.png";
+import noProfile from "./noprofile.png";
 
 export const assets = {
   logo,
@@ -43,6 +44,7 @@ export const assets = {
   maleFemale,
   calendar,
   attendance,
+  noProfile,
   result,
   assignment,
   exam,
