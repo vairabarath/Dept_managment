@@ -16,14 +16,14 @@ const row = (item: Subjects) => {
   return (
     <tr
       key={item.id}
-      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-skyBlue "
+      className="border-b h-14 border-gray-500 text-sm hover:bg-bgDark2 transition-all duration-200 ease-in-out"
     >
-      <td className="text-sm ">{item.name}</td>
-      <td className="hidden md:table-cell">
+      <td className="text-sm text-gray-200 ">{item.name}</td>
+      <td className="hidden md:table-cell text-gray-200">
         {item.teachers.map((item) => item.name).join(", ")}
       </td>
       {role === "admin" && (
-        <td className="flex items-center gap-2">
+        <td className="flex items-center my-3 gap-2">
           <Form table="subject" type="update" data={item} />
           <Form table="subject" type="Delete" id={item.id} />
         </td>
@@ -73,9 +73,11 @@ const SubjectList = () => {
     }
   }, [location]);
   return (
-    <div className="flex-1 bg-white m-4 p-4 mt-0 rounded-md">
+    <div className="flex-1 bg-bgDark m-4 p-4 mt-0 rounded-md">
       <div className="flex justify-between items-center">
-        <h2 className="hidden md:block text-lg font-semibold">Subject List</h2>
+        <h2 className="hidden md:block text-lg font-semibold text-white">
+          Subject List
+        </h2>
         <div className="flex flex-col md:flex-row gap-4 items-center w-full md:w-auto">
           <TableSearch />
           <Form table="subject" type="create" />

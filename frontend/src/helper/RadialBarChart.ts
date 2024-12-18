@@ -2,16 +2,16 @@ export const RadialBarChartdata = [
   {
     name: "Total",
     count: 100,
-    fill: "white",
+    fill: "#1F1F1F",
   },
   {
     name: "Girls",
     count: 50,
-    fill: "#FFDCF1",
+    fill: "#ED6691",
   },
   {
     name: "Boys",
     count: 50,
-    fill: "#C3EBFA",
+    fill: "#1270A7",
   },
 ];

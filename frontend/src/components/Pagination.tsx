@@ -11,7 +11,7 @@ const Pagination = ({ page, count }: { page: number; count: number }) => {
     router(`${window.location.pathname}?${params}`);
   };
   return (
-    <div className="p-4 flex items-center justify-between text-gray-500">
+    <div className="p-4 flex items-center justify-between text-gray-800">
       <button
         disabled={!prev}
         onClick={() => changePage(page - 1)}
@@ -26,7 +26,7 @@ const Pagination = ({ page, count }: { page: number; count: number }) => {
             <button
               key={pageIndex}
               className={`px-2 rounded-sm ${
-                page === pageIndex ? "bg-skyBlue" : "bg-slate-50"
+                page === pageIndex ? "bg-violet" : "bg-slate-50"
               }`}
               onClick={() => changePage(pageIndex)}
             >

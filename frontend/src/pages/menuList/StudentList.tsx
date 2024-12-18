@@ -17,7 +17,7 @@ const row = (item: Student) => {
   return (
     <tr
       key={item.id}
-      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-skyBlue"
+      className="border-b border-gray-500 text-sm hover:bg-bgDark2 hover:scale-105 transition-transform duration-300 ease-in-out transform-origin-center"
     >
       <td className="flex items-center gap-4 p-4">
         <img
@@ -28,15 +28,19 @@ const row = (item: Student) => {
           className="md:hidden xl:block w-10 h-10 object-cover rounded-full"
         />
         <div className="flex flex-col ">
-          <h3 className="font-semibold">{item.name}</h3>
-          <p className="text-xs text-gray-500">{item.email}</p>
+          <h3 className="font-semibold text-gray-200">{item.name}</h3>
+          <p className="text-xs text-gray-400">{item.email}</p>
         </div>
       </td>
-      <td className="hidden md:table-cell">{item.id}</td>
-      <td className="hidden md:table-cell">{item.class?.name || "N/A"}</td>
-      <td className="hidden md:table-cell">{item.semester?.level || "N/A"}</td>
-      <td className="hidden md:table-cell">{item.phone}</td>
-      <td className="hidden md:table-cell">{item.address}</td>
+      <td className="hidden md:table-cell text-gray-200">{item.id}</td>
+      <td className="hidden md:table-cell text-gray-200">
+        {item.class?.name || "N/A"}
+      </td>
+      <td className="hidden md:table-cell text-gray-200">
+        {item.semester?.level || "N/A"}
+      </td>
+      <td className="hidden md:table-cell text-gray-200">{item.phone}</td>
+      <td className="hidden md:table-cell text-gray-200">{item.address}</td>
       <td>
         <div className="flex items-center gap-2 ">
           <Link to={`/students/${item.id}`}>
@@ -94,17 +98,19 @@ const StudentList = () => {
   }, [location]);
 
   return (
-    <div className="flex-1 bg-white p-4 m-4 mt-0 rounded-md">
+    <div className="flex-1 bg-bgDark p-4 m-4 mt-0 rounded-md">
       <div className="flex justify-between items-center">
-        <h1 className="hidden md:block text-lg font-semibold">Students</h1>
+        <h1 className="hidden md:block text-lg font-semibold text-white">
+          Students
+        </h1>
 
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <div className="flex items-center gap-2">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-green">
+            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-darkGreen">
               <Filter width={14} height={14} />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-green">
+            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-darkGreen">
               <SortDesc width={14} height={14} />
             </button>
             {role === "admin" && <Form table="student" type="create" />}

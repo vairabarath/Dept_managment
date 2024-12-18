@@ -59,7 +59,6 @@ export const menuItems = [
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: assets.result,
         label: "Results",
         href: "data/results",
         visible: ["admin", "teacher", "student", "parent"],

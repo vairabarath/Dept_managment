@@ -16,7 +16,6 @@ import LessonsList from "./pages/menuList/LessonsList";
 import ExamList from "./pages/menuList/ExamsList";
 import AssignmentList from "./pages/menuList/AssignmentList";
 import ResultList from "./pages/menuList/ResultList";
-import AttendanceList from "./pages/menuList/EventList";
 import EventList from "./pages/menuList/EventList";
 import AnnouncementList from "./pages/menuList/AnnouncementList";
 
@@ -29,11 +28,11 @@ const App = () => {
         <div className="w-[15%] md:w-[8%] lg:w-[16%] xl:w-[15%] ">
           <Link to="/" className="flex items-center justify-start gap-2 p-4">
             <img src={assets.logo} alt="logo" width={32} height={32} />
-            <span className="hidden lg:block">Something</span>
+            <span className="hidden lg:block text-white">Something</span>
           </Link>
           <Menu />
         </div>
-        <div className="w-[85%] md:w-[92%] lg:w-[84%] xl:w-[85%] bg-[#f5f5f5de] flex flex-col overflow-scroll">
+        <div className="w-[85%] md:w-[92%] lg:w-[84%] xl:w-[85%] bg-[#121212] flex flex-col overflow-scroll">
           <Navbar />
           <Routes>
             <Route path="/parents" element={<Parent />} />

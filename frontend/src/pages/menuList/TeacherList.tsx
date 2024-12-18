@@ -16,7 +16,7 @@ const row = (item: Teacher) => {
   return (
     <tr
       key={item.id}
-      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-skyBlue"
+      className="border-b border-gray-500 text-sm hover:bg-bgDark2 hover:scale-105 transition-all duration-300 ease-in-out transform-origin-center"
     >
       <td className="flex items-center gap-4 p-4">
         <img
@@ -27,19 +27,19 @@ const row = (item: Teacher) => {
           className="md:hidden xl:block w-10 h-10 object-cover rounded-full"
         />
         <div className="flex flex-col">
-          <h3 className="font-semibold">{item.name}</h3>
-          <p className="text-xs text-gray-500">{item?.email}</p>
+          <h3 className="font-semibold text-gray-200">{item.name}</h3>
+          <p className="text-xs text-gray-400">{item?.email}</p>
         </div>
       </td>
-      <td className="hidden md:table-cell">{item.id}</td>
-      <td className="hidden md:table-cell">
+      <td className="hidden md:table-cell text-gray-200">{item.id}</td>
+      <td className="hidden md:table-cell text-gray-200">
         {item.subjects.map((subject) => subject.name).join(", ")}
       </td>
-      <td className="hidden md:table-cell">
+      <td className="hidden md:table-cell text-gray-200">
         {item.classes.map((classItem) => classItem.name).join(", ")}
       </td>
-      <td className="hidden md:table-cell">{item.phone}</td>
-      <td className="hidden md:table-cell">{item.address}</td>
+      <td className="hidden md:table-cell text-gray-200">{item.phone}</td>
+      <td className="hidden md:table-cell text-gray-200">{item.address}</td>
       <td>
         <div className="flex items-center gap-2">
           <Link to={`/teachers/${item.id}`}>
@@ -48,9 +48,6 @@ const row = (item: Teacher) => {
             </button>
           </Link>
           {role === "admin" && (
-            // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-skyBlue">
-            //   <Trash width={16} height={16} />
-            // </button>
             <Form type="Delete" table="teacher" id={item.id} />
           )}
         </div>
@@ -101,15 +98,15 @@ const TeacherList = () => {
   }, [location]);
 
   return (
-    <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
+    <div className="bg-bgDark p-4 rounded-md flex-1 m-4 mt-0">
       <div className="flex items-center justify-between ">
-        <h1 className="text-lg font-semibold ">Teachers</h1>
+        <h1 className="text-lg font-semibold text-white ">Teachers</h1>
 
         <div className="flex items-center gap-4 self-end">
-          <button className="w-8 h-8 flex items-center justify-center rounded-full bg-green">
+          <button className="w-8 h-8 flex items-center justify-center rounded-full bg-darkGreen">
             <FilterIcon width={14} height={14} />
           </button>
-          <button className="w-8 h-8 flex items-center justify-center rounded-full bg-green">
+          <button className="w-8 h-8 flex items-center justify-center rounded-full bg-darkGreen">
             <SortDesc width={14} height={14} />
           </button>
           {role === "admin" && <Form type="create" table="teacher" />}

@@ -25,6 +25,7 @@ import create from "./create.png";
 import update from "./update.png";
 import Delete from "./delete.png";
 import noProfile from "./noprofile.png";
+import caption from "./captions.png";
 
 export const assets = {
   logo,
@@ -39,6 +40,7 @@ export const assets = {
   avatar,
   more,
   subject,
+  caption,
   lesson,
   moreDark,
   maleFemale,

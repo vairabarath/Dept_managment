@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.react-calendar {
-  width: 100% !important;
-  border: none !important;
-  font-family: "Inter", sans-serif !important;
+body {
+  background-color: #1f1f1f;
 }
 
+.react-calendar {
+  width: 100% !important;
+  /* border: none !important; */
+  color: white !important;
+  font-family: "Inter", sans-serif !important;
+  background-color: #1f1f1f !important;
+}
+.react-calendar__tile--now {
+  background-color: #edf9fd !important;
+  color: black !important;
+}
 .react-calendar__tile--active {
   background-color: #c3ebfa !important;
   color: black !important;

@@ -2,8 +2,6 @@ import Form from "../../components/Form";
 import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
 import { LessonColumns } from "../../helper/Columns";
-import { data } from "../../helper/AttendanceChartData";
-import { lessonsData } from "../../helper/data";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
@@ -16,11 +14,13 @@ const row = (item: Lessons) => {
   return (
     <tr
       key={item.id}
-      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-skyBlue"
+      className="border-b h-14 border-gray-500 text-sm hover:bg-bgDark2 transition-all duration-200 ease-in-out"
     >
-      <td className="text-sm">{item.subject?.name}</td>
-      <td className="hidden md:table-cell">{item.class?.name}</td>
-      <td className="hidden md:table-cell">{item.teacher?.name}</td>
+      <td className="text-sm text-gray-200">{item.subject?.name}</td>
+      <td className="hidden md:table-cell text-gray-200">{item.class?.name}</td>
+      <td className="hidden md:table-cell text-gray-200">
+        {item.teacher?.name}
+      </td>
 
       <td>
         <div className="flex items-center gap-2">
@@ -73,9 +73,11 @@ const LessonsList = () => {
     }
   }, [location]);
   return (
-    <div className="flex-1 p-4 m-4 mt-0 bg-white rounded-md">
+    <div className="flex-1 p-4 m-4 mt-0 bg-bgDark rounded-md">
       <div className="flex justify-between items-center">
-        <h1 className=" hidden md:block text-lg font-semibold">Lessons List</h1>
+        <h1 className=" hidden md:block text-lg font-semibold text-white">
+          Lessons List
+        </h1>
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <Form table="lesson" type="create" />

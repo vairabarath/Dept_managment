@@ -15,16 +15,16 @@ const row = (item: Announcements) => {
   return (
     <tr
       key={item.id}
-      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-skyBlue"
+      className="border-b border-gray-500 h-14 text-sm hover:bg-bgDark2 transition-all duration-200 ease-in-out"
     >
-      <td className="text-sm">{item.title}</td>
-      <td className="hidden md:table-cell">{item.class.name}</td>
-      <td className="hidden md:table-cell">
+      <td className="text-sm text-gray-200">{item.title}</td>
+      <td className="hidden md:table-cell text-gray-200">{item.class.name}</td>
+      <td className="hidden md:table-cell text-gray-200">
         {new Intl.DateTimeFormat("en-US").format(new Date(item.date))}
       </td>
 
       <td>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 my-3">
           <Form table="announcements" type="update" data={item} />
           <Form table="announcements" type="Delete" id={item.id} />
         </div>
@@ -75,9 +75,9 @@ const AnnouncementList = () => {
     }
   }, [location]);
   return (
-    <div className="flex-1 p-4 m-4 mt-0 bg-white rounded-md">
+    <div className="flex-1 p-4 m-4 mt-0 bg-bgDark rounded-md">
       <div className="flex justify-between items-center">
-        <h1 className="hidden md:block text-lg font-semibold">
+        <h1 className="hidden md:block text-lg font-semibold text-white">
           Announcements List
         </h1>
         <div className="flex flex-col gap-4 md:flex-row items-center w-full md:w-auto">
